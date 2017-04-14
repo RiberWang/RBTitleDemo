@@ -15,6 +15,8 @@
 		0754F32F1EA0B8EE00BDC68E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0754F32D1EA0B8EE00BDC68E /* LaunchScreen.storyboard */; };
 		0754F33A1EA0B8EE00BDC68E /* RBTitleDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3391EA0B8EE00BDC68E /* RBTitleDemoTests.m */; };
 		0754F3451EA0B8EF00BDC68E /* RBTitleDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3441EA0B8EF00BDC68E /* RBTitleDemoUITests.m */; };
+		0754F3541EA0B90300BDC68E /* RBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3531EA0B90300BDC68E /* RBTitleView.m */; };
+		0754F3581EA0B92400BDC68E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3571EA0B92400BDC68E /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		0754F3401EA0B8EF00BDC68E /* RBTitleDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RBTitleDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0754F3441EA0B8EF00BDC68E /* RBTitleDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBTitleDemoUITests.m; sourceTree = "<group>"; };
 		0754F3461EA0B8EF00BDC68E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0754F3521EA0B90300BDC68E /* RBTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTitleView.h; sourceTree = "<group>"; };
+		0754F3531EA0B90300BDC68E /* RBTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTitleView.m; sourceTree = "<group>"; };
+		0754F3561EA0B92400BDC68E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		0754F3571EA0B92400BDC68E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,9 @@
 				0754F3231EA0B8EE00BDC68E /* AppDelegate.m */,
 				0754F3251EA0B8EE00BDC68E /* ViewController.h */,
 				0754F3261EA0B8EE00BDC68E /* ViewController.m */,
+				0754F3521EA0B90300BDC68E /* RBTitleView.h */,
+				0754F3531EA0B90300BDC68E /* RBTitleView.m */,
+				0754F3551EA0B92400BDC68E /* UIView+Extension直接访问宽高 */,
 				0754F3281EA0B8EE00BDC68E /* Main.storyboard */,
 				0754F32B1EA0B8EE00BDC68E /* Assets.xcassets */,
 				0754F32D1EA0B8EE00BDC68E /* LaunchScreen.storyboard */,
@@ -138,6 +147,15 @@
 				0754F3461EA0B8EF00BDC68E /* Info.plist */,
 			);
 			path = RBTitleDemoUITests;
+			sourceTree = "<group>";
+		};
+		0754F3551EA0B92400BDC68E /* UIView+Extension直接访问宽高 */ = {
+			isa = PBXGroup;
+			children = (
+				0754F3561EA0B92400BDC68E /* UIView+Extension.h */,
+				0754F3571EA0B92400BDC68E /* UIView+Extension.m */,
+			);
+			path = "UIView+Extension直接访问宽高";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0754F3581EA0B92400BDC68E /* UIView+Extension.m in Sources */,
 				0754F3271EA0B8EE00BDC68E /* ViewController.m in Sources */,
+				0754F3541EA0B90300BDC68E /* RBTitleView.m in Sources */,
 				0754F3241EA0B8EE00BDC68E /* AppDelegate.m in Sources */,
 				0754F3211EA0B8EE00BDC68E /* main.m in Sources */,
 			);
