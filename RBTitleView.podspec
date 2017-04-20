@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.version      = "1.0.0"
   s.summary      = "可滑动的titleView"
   s.platform     = :ios, "8.0"
-  s.source_files  = "RBTitleView/**/*.{h,m}"
+  s.source_files  = "RBTitleView/*.{h,m}"
   s.framework  = "UIKit"
   s.homepage     = "https://github.com/RiberWang/RBTitleDemo"
   s.license      = "MIT"
