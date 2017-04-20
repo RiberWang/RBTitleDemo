@@ -16,7 +16,7 @@
 		0754F33A1EA0B8EE00BDC68E /* RBTitleDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3391EA0B8EE00BDC68E /* RBTitleDemoTests.m */; };
 		0754F3451EA0B8EF00BDC68E /* RBTitleDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3441EA0B8EF00BDC68E /* RBTitleDemoUITests.m */; };
 		0758A9F11EA8AC8A00B2753A /* RBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0758A9ED1EA8AC8A00B2753A /* RBTitleView.m */; };
-		0758A9F21EA8AC8A00B2753A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0758A9F01EA8AC8A00B2753A /* UIView+Extension.m */; };
+		0758A9F51EA8B4BE00B2753A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0758A9F41EA8B4BE00B2753A /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 		0754F3461EA0B8EF00BDC68E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0758A9EC1EA8AC8A00B2753A /* RBTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTitleView.h; sourceTree = "<group>"; };
 		0758A9ED1EA8AC8A00B2753A /* RBTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTitleView.m; sourceTree = "<group>"; };
-		0758A9EF1EA8AC8A00B2753A /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		0758A9F01EA8AC8A00B2753A /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		0758A9F31EA8B4BE00B2753A /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		0758A9F41EA8B4BE00B2753A /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,20 +150,12 @@
 		0758A9EB1EA8AC8A00B2753A /* RBTitleView */ = {
 			isa = PBXGroup;
 			children = (
+				0758A9F31EA8B4BE00B2753A /* UIView+Extension.h */,
+				0758A9F41EA8B4BE00B2753A /* UIView+Extension.m */,
 				0758A9EC1EA8AC8A00B2753A /* RBTitleView.h */,
 				0758A9ED1EA8AC8A00B2753A /* RBTitleView.m */,
-				0758A9EE1EA8AC8A00B2753A /* UIView+Extension直接访问宽高 */,
 			);
 			path = RBTitleView;
-			sourceTree = "<group>";
-		};
-		0758A9EE1EA8AC8A00B2753A /* UIView+Extension直接访问宽高 */ = {
-			isa = PBXGroup;
-			children = (
-				0758A9EF1EA8AC8A00B2753A /* UIView+Extension.h */,
-				0758A9F01EA8AC8A00B2753A /* UIView+Extension.m */,
-			);
-			path = "UIView+Extension直接访问宽高";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0758A9F21EA8AC8A00B2753A /* UIView+Extension.m in Sources */,
+				0758A9F51EA8B4BE00B2753A /* UIView+Extension.m in Sources */,
 				0754F3271EA0B8EE00BDC68E /* ViewController.m in Sources */,
 				0758A9F11EA8AC8A00B2753A /* RBTitleView.m in Sources */,
 				0754F3241EA0B8EE00BDC68E /* AppDelegate.m in Sources */,
