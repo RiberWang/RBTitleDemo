@@ -17,8 +17,8 @@
 		0754F3451EA0B8EF00BDC68E /* RBTitleDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3441EA0B8EF00BDC68E /* RBTitleDemoUITests.m */; };
 		0754F3541EA0B90300BDC68E /* RBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3531EA0B90300BDC68E /* RBTitleView.m */; };
 		0754F3581EA0B92400BDC68E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3571EA0B92400BDC68E /* UIView+Extension.m */; };
-		0758A9D91EA8995900B2753A /* RBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0758A9D51EA8995900B2753A /* RBTitleView.m */; };
-		0758A9DA1EA8995900B2753A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0758A9D81EA8995900B2753A /* UIView+Extension.m */; };
+		0758A9E11EA89C2D00B2753A /* RBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0758A9DD1EA89C2D00B2753A /* RBTitleView.m */; };
+		0758A9E21EA89C2D00B2753A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0758A9E01EA89C2D00B2753A /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +59,10 @@
 		0754F3531EA0B90300BDC68E /* RBTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTitleView.m; sourceTree = "<group>"; };
 		0754F3561EA0B92400BDC68E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		0754F3571EA0B92400BDC68E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		0758A9D41EA8995900B2753A /* RBTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTitleView.h; sourceTree = "<group>"; };
-		0758A9D51EA8995900B2753A /* RBTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTitleView.m; sourceTree = "<group>"; };
-		0758A9D71EA8995900B2753A /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		0758A9D81EA8995900B2753A /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		0758A9DC1EA89C2D00B2753A /* RBTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTitleView.h; sourceTree = "<group>"; };
+		0758A9DD1EA89C2D00B2753A /* RBTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTitleView.m; sourceTree = "<group>"; };
+		0758A9DF1EA89C2D00B2753A /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		0758A9E01EA89C2D00B2753A /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +93,7 @@
 		0754F3131EA0B8EE00BDC68E = {
 			isa = PBXGroup;
 			children = (
+				0758A9DB1EA89C2D00B2753A /* RBTitleView */,
 				0754F31E1EA0B8EE00BDC68E /* RBTitleDemo */,
 				0754F3381EA0B8EE00BDC68E /* RBTitleDemoTests */,
 				0754F3431EA0B8EF00BDC68E /* RBTitleDemoUITests */,
@@ -113,7 +114,6 @@
 		0754F31E1EA0B8EE00BDC68E /* RBTitleDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0758A9D31EA8995900B2753A /* RBTitleView */,
 				0754F3221EA0B8EE00BDC68E /* AppDelegate.h */,
 				0754F3231EA0B8EE00BDC68E /* AppDelegate.m */,
 				0754F3251EA0B8EE00BDC68E /* ViewController.h */,
@@ -165,22 +165,21 @@
 			path = "UIView+Extension直接访问宽高";
 			sourceTree = "<group>";
 		};
-		0758A9D31EA8995900B2753A /* RBTitleView */ = {
+		0758A9DB1EA89C2D00B2753A /* RBTitleView */ = {
 			isa = PBXGroup;
 			children = (
-				0758A9D41EA8995900B2753A /* RBTitleView.h */,
-				0758A9D51EA8995900B2753A /* RBTitleView.m */,
-				0758A9D61EA8995900B2753A /* UIView+Extension直接访问宽高 */,
+				0758A9DC1EA89C2D00B2753A /* RBTitleView.h */,
+				0758A9DD1EA89C2D00B2753A /* RBTitleView.m */,
+				0758A9DE1EA89C2D00B2753A /* UIView+Extension直接访问宽高 */,
 			);
-			name = RBTitleView;
-			path = ../RBTitleView;
+			path = RBTitleView;
 			sourceTree = "<group>";
 		};
-		0758A9D61EA8995900B2753A /* UIView+Extension直接访问宽高 */ = {
+		0758A9DE1EA89C2D00B2753A /* UIView+Extension直接访问宽高 */ = {
 			isa = PBXGroup;
 			children = (
-				0758A9D71EA8995900B2753A /* UIView+Extension.h */,
-				0758A9D81EA8995900B2753A /* UIView+Extension.m */,
+				0758A9DF1EA89C2D00B2753A /* UIView+Extension.h */,
+				0758A9E01EA89C2D00B2753A /* UIView+Extension.m */,
 			);
 			path = "UIView+Extension直接访问宽高";
 			sourceTree = "<group>";
@@ -324,8 +323,8 @@
 				0754F3581EA0B92400BDC68E /* UIView+Extension.m in Sources */,
 				0754F3271EA0B8EE00BDC68E /* ViewController.m in Sources */,
 				0754F3541EA0B90300BDC68E /* RBTitleView.m in Sources */,
-				0758A9DA1EA8995900B2753A /* UIView+Extension.m in Sources */,
-				0758A9D91EA8995900B2753A /* RBTitleView.m in Sources */,
+				0758A9E21EA89C2D00B2753A /* UIView+Extension.m in Sources */,
+				0758A9E11EA89C2D00B2753A /* RBTitleView.m in Sources */,
 				0754F3241EA0B8EE00BDC68E /* AppDelegate.m in Sources */,
 				0754F3211EA0B8EE00BDC68E /* main.m in Sources */,
 			);
