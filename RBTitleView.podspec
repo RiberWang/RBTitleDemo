@@ -19,10 +19,11 @@ Pod::Spec.new do |s|
   s.version      = "1.0.0"
   s.summary      = "可滑动的titleView"
   s.platform     = :ios, "8.0"
-  s.source_files  = "RBTitleDemo/**/*.{h,m}"
+  s.source_files  = "RBTitleView/**/*.{h,m}"
   s.framework  = "UIKit"
   s.homepage     = "https://github.com/RiberWang/RBTitleDemo"
   s.license      = "MIT"
+  s.author             = { "Riber" => "314420972@qq.com" }
   s.source       = { :git => "https://github.com/RiberWang/RBTitleDemo.git", :tag => s.version.to_s}
 
   # This description is used to generate tags and improve search results.
@@ -57,7 +58,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "Riber" => "314420972@qq.com" }
+  # s.author             = { "Riber" => "314420972@qq.com" }
   # Or just: s.author    = "Riber"
   # s.authors            = { "Riber" => "314420972@qq.com" }
   # s.social_media_url   = "http://twitter.com/Riber"
