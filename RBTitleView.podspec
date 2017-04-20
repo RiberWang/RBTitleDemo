@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.framework  = "UIKit"
   s.homepage     = "https://github.com/RiberWang/RBTitleDemo"
   s.license      = "MIT"
-  s.source       = { :git => "https://github.com/RiberWang/RBTitleDemo.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/RiberWang/RBTitleDemo.git", :tag => s.version.to_s}
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
