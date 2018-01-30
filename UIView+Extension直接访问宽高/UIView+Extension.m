@@ -104,4 +104,26 @@
     return CGRectGetMaxY(self.frame);
 }
 
+- (void)setMaxX:(CGFloat)maxX {
+    CGRect frame = self.frame;
+    if (maxX < self.x) {
+        frame.size.width = 0;
+    } else {
+        frame.size.width = maxX - self.x;
+    }
+    self.frame = frame;
+}
+
+- (void)setMaxY:(CGFloat)maxY {
+    CGRect frame = self.frame;
+    if (maxY < self.y) {
+        frame.size.height = 0;
+    } else {
+        frame.size.height = maxY - self.y;
+    }
+    self.frame = frame;
+}
+
+
+
 @end

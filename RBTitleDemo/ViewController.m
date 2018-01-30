@@ -1,4 +1,4 @@
-//
+    //
 //  ViewController.m
 //  RBTitleDemo
 //
@@ -7,35 +7,85 @@
 //
 
 #import "ViewController.h"
+#import "RBTitleViewController.h"
+
 #import "RBTitleView.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) RBTitleView *titleView;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *dataArray;
 
 @end
 
 @implementation ViewController
 
+- (NSArray *)dataArray {
+    if (_dataArray == nil) {
+        _dataArray = @[@"5个以下（不超过屏幕宽度）", @"5个以上（超过屏幕宽度）"];
+    }
+    
+    return _dataArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"我的标题视图";
+    self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self createUI];
+
+    [self tableView];
 }
 
+#pragma mark tableView
+- (UITableView *)tableView {
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        [self.view addSubview:_tableView];
+        _tableView.rowHeight = 50;
+        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        
+        if (@available(iOS 11.0, *)) {
+            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
+        else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+    }
+    
+    return _tableView;
+}
 
-- (void)createUI {
-    self.titleView = [[RBTitleView alloc] initWithFrame:CGRectMake(0, 64, kSCREENW, 44) andTitleArray:@[@"器械", @"课程"]];
-    self.titleView.isHaveRightLine = YES;
-    [self.titleView setButtonTitleFont:[UIFont systemFontOfSize:16]];
-     self.titleView.titleButtonClickBlock = ^(NSInteger index) {
+#pragma mark - tableview delegate datasource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.dataArray.count;
+}
 
-     };
-     
-     [self.view addSubview:self.titleView];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cpVCIdentify = @"RBCPCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cpVCIdentify];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cpVCIdentify];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    cell.textLabel.text = self.dataArray[indexPath.row];
+    
+    return cell;
+}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    RBTitleViewController *titleVC = [[RBTitleViewController alloc] init];
+    titleVC.type = indexPath.row;
+    titleVC.navigationItem.title = self.dataArray[indexPath.row];
+    [self.navigationController pushViewController:titleVC animated:YES];
 }
 
 @end

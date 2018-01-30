@@ -16,7 +16,8 @@
 		0754F33A1EA0B8EE00BDC68E /* RBTitleDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3391EA0B8EE00BDC68E /* RBTitleDemoTests.m */; };
 		0754F3451EA0B8EF00BDC68E /* RBTitleDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754F3441EA0B8EF00BDC68E /* RBTitleDemoUITests.m */; };
 		0758A9F11EA8AC8A00B2753A /* RBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0758A9ED1EA8AC8A00B2753A /* RBTitleView.m */; };
-		076C735A1EA9E2780034A031 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 076C73591EA9E2780034A031 /* UIView+Extension.m */; };
+		077FE6462020086400EEA0A6 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 077FE6452020086400EEA0A6 /* UIView+Extension.m */; };
+		077FE64920200AB200EEA0A6 /* RBTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077FE64820200AB200EEA0A6 /* RBTitleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +56,10 @@
 		0754F3461EA0B8EF00BDC68E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0758A9EC1EA8AC8A00B2753A /* RBTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTitleView.h; sourceTree = "<group>"; };
 		0758A9ED1EA8AC8A00B2753A /* RBTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTitleView.m; sourceTree = "<group>"; };
-		076C73581EA9E2780034A031 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		076C73591EA9E2780034A031 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		077FE6442020086400EEA0A6 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		077FE6452020086400EEA0A6 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		077FE64720200AB200EEA0A6 /* RBTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBTitleViewController.h; sourceTree = "<group>"; };
+		077FE64820200AB200EEA0A6 /* RBTitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBTitleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 		0754F3131EA0B8EE00BDC68E = {
 			isa = PBXGroup;
 			children = (
+				077FE6432020086400EEA0A6 /* UIView+Extension直接访问宽高 */,
 				0758A9EB1EA8AC8A00B2753A /* RBTitleView */,
 				0754F31E1EA0B8EE00BDC68E /* RBTitleDemo */,
 				0754F3381EA0B8EE00BDC68E /* RBTitleDemoTests */,
@@ -112,6 +116,8 @@
 				0754F3231EA0B8EE00BDC68E /* AppDelegate.m */,
 				0754F3251EA0B8EE00BDC68E /* ViewController.h */,
 				0754F3261EA0B8EE00BDC68E /* ViewController.m */,
+				077FE64720200AB200EEA0A6 /* RBTitleViewController.h */,
+				077FE64820200AB200EEA0A6 /* RBTitleViewController.m */,
 				0754F3281EA0B8EE00BDC68E /* Main.storyboard */,
 				0754F32B1EA0B8EE00BDC68E /* Assets.xcassets */,
 				0754F32D1EA0B8EE00BDC68E /* LaunchScreen.storyboard */,
@@ -150,12 +156,19 @@
 		0758A9EB1EA8AC8A00B2753A /* RBTitleView */ = {
 			isa = PBXGroup;
 			children = (
-				076C73581EA9E2780034A031 /* UIView+Extension.h */,
-				076C73591EA9E2780034A031 /* UIView+Extension.m */,
 				0758A9EC1EA8AC8A00B2753A /* RBTitleView.h */,
 				0758A9ED1EA8AC8A00B2753A /* RBTitleView.m */,
 			);
 			path = RBTitleView;
+			sourceTree = "<group>";
+		};
+		077FE6432020086400EEA0A6 /* UIView+Extension直接访问宽高 */ = {
+			isa = PBXGroup;
+			children = (
+				077FE6442020086400EEA0A6 /* UIView+Extension.h */,
+				077FE6452020086400EEA0A6 /* UIView+Extension.m */,
+			);
+			path = "UIView+Extension直接访问宽高";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,9 +307,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076C735A1EA9E2780034A031 /* UIView+Extension.m in Sources */,
+				077FE6462020086400EEA0A6 /* UIView+Extension.m in Sources */,
 				0754F3271EA0B8EE00BDC68E /* ViewController.m in Sources */,
 				0758A9F11EA8AC8A00B2753A /* RBTitleView.m in Sources */,
+				077FE64920200AB200EEA0A6 /* RBTitleViewController.m in Sources */,
 				0754F3241EA0B8EE00BDC68E /* AppDelegate.m in Sources */,
 				0754F3211EA0B8EE00BDC68E /* main.m in Sources */,
 			);

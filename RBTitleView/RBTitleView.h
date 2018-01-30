@@ -23,17 +23,41 @@
 
 @interface RBTitleView : UIView
 
-@property (nonatomic, copy) void (^titleButtonClickBlock)(NSInteger index);
 @property (nonatomic, assign) BOOL isHaveRightLine;
 @property (nonatomic, strong) UIColor *normalColor;
 @property (nonatomic, strong) UIColor *selectColor;
+@property (nonatomic, assign) BOOL isHaveBottomLine;
+@property (nonatomic, assign) BOOL isHaveSelectLine;
 
-- (instancetype)initWithFrame:(CGRect)frame andTitleArray:(NSArray *)titleArray;
+@property (nonatomic, copy) void (^titleButtonClickBlock)(NSInteger index);
 
-// 设置选中第几个按钮
+/**
+ 初始化方法 一定要写
+
+ @param frame frame
+ @param titleArray 字符串文字数组
+ @return 初始化
+ */
+- (instancetype)initWithFrame:(CGRect)frame andTitleArray:(NSArray<NSString *> *)titleArray;
+
+/**
+ 设置选中第几个按钮
+
+ @param index 设置设置选中按钮的索引
+ */
 - (void)setSelectIndex:(NSInteger)index;
 
-// 设置字体
+
+/**
+ 清空所有选择
+ */
+- (void)clearAllSelect;
+
+/**
+ 设置字体大小
+
+ @param font 字体大小
+ */
 - (void)setButtonTitleFont:(UIFont *)font;
 
 @end

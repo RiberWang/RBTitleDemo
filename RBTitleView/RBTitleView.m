@@ -25,6 +25,7 @@
     if (self = [super initWithFrame:frame]) {
         _titleArray = titleArray;
         self.backgroundColor = [UIColor whiteColor];
+        self.isHaveSelectLine = YES;
         
         _widthArray = [NSMutableArray arrayWithCapacity:0];
         _buttonArray = [NSMutableArray arrayWithCapacity:0];
@@ -34,6 +35,7 @@
     return self;
 }
 
+
 - (void)createUI {
     self.bgScrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     self.bgScrollView.showsHorizontalScrollIndicator = NO;
@@ -42,7 +44,7 @@
     if (_titleArray.count > MaxScrollCount) {
         for (int i = 0; i < _titleArray.count; i++) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.frame = CGRectMake(i*(kSCREENW/MaxScrollCount), 0, kSCREENW/MaxScrollCount, self.bgScrollView.height-1);
+            button.frame = CGRectMake(i*(self.width/MaxScrollCount), 0, self.width/MaxScrollCount, self.bgScrollView.height);
             [button setTitle:_titleArray[i] forState:UIControlStateNormal];
             [button setTitleColor:NormalColor forState:UIControlStateNormal];
             [button setTitleColor:SelectColor forState:UIControlStateSelected];
@@ -58,7 +60,7 @@
             [_widthArray addObject:[NSNumber numberWithFloat:rect.size.width]];
             
             if (i == 0) {
-                _bottomLine = [[UILabel alloc] initWithFrame:CGRectMake(0, self.height-1, kSCREENW, 1)];
+                _bottomLine = [[UILabel alloc] initWithFrame:CGRectMake(0, self.height-1, self.width, 1)];
                 _bottomLine.backgroundColor = BottomLineColor;
                 [self addSubview:_bottomLine];
                 
@@ -76,7 +78,7 @@
     {
         for (int i = 0; i < _titleArray.count; i++) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.frame = CGRectMake(i*(kSCREENW/_titleArray.count), 0, kSCREENW/_titleArray.count, self.bgScrollView.height-1);
+            button.frame = CGRectMake(i*(self.width/_titleArray.count), 0, self.width/_titleArray.count, self.bgScrollView.height);
             [button setTitle:_titleArray[i] forState:UIControlStateNormal];
             [button setTitleColor:NormalColor forState:UIControlStateNormal];
             [button setTitleColor:SelectColor forState:UIControlStateSelected];
@@ -92,7 +94,7 @@
             [_widthArray addObject:[NSNumber numberWithFloat:rect.size.width]];
             
             if (i == 0) {
-                _bottomLine = [[UILabel alloc] initWithFrame:CGRectMake(0, self.height-1, kSCREENW, 1)];
+                _bottomLine = [[UILabel alloc] initWithFrame:CGRectMake(0, self.height-1, self.width, 1)];
                 _bottomLine.backgroundColor = BottomLineColor;
                 [self addSubview:_bottomLine];
                 
@@ -108,24 +110,34 @@
 
 - (void)setIsHaveRightLine:(BOOL)isHaveRightLine {
     if (isHaveRightLine) {
-        if (isHaveRightLine) {
-            if (_titleArray.count > 5) {
-                for (int i = 0; i < _titleArray.count-1; i++) {
-                    UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(kSCREENW/MaxScrollCount + i*(kSCREENW/MaxScrollCount)-0.5, 10, 0.5, self.height-0.5-2*10)];
-                    lineLabel.backgroundColor = RightLineColor;
-                    [_bgScrollView addSubview:lineLabel];
-                }
+        if (_titleArray.count > 5) {
+            for (int i = 0; i < _titleArray.count-1; i++) {
+                UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.width/MaxScrollCount + i*(self.width/MaxScrollCount)-0.5, 10, 0.5, self.height-0.5-2*10)];
+                lineLabel.backgroundColor = RightLineColor;
+                [_bgScrollView addSubview:lineLabel];
             }
-            else
-            {
-                for (int i = 0; i < _titleArray.count-1; i++) {
-                    UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(kSCREENW/self.titleArray.count + i*(kSCREENW/_titleArray.count)-0.5, 10, 0.5, self.height-0.5-2*10)];
-                    lineLabel.backgroundColor = RightLineColor;
-                    [_bgScrollView addSubview:lineLabel];
-                }
+        }
+        else
+        {
+            for (int i = 0; i < _titleArray.count-1; i++) {
+                UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.width/self.titleArray.count + i*(self.width/_titleArray.count)-0.5, 10, 0.5, self.height-0.5-2*10)];
+                lineLabel.backgroundColor = RightLineColor;
+                [_bgScrollView addSubview:lineLabel];
             }
         }
     }
+}
+
+- (void)setIsHaveBottomLine:(BOOL)isHaveBottomLine {
+    _isHaveBottomLine = isHaveBottomLine;
+    
+    self.bottomLine.hidden = !isHaveBottomLine;
+}
+
+- (void)setIsHaveSelectLine:(BOOL)isHaveSelectLine {
+    _isHaveSelectLine = isHaveSelectLine;
+    
+    self.selectLine.hidden = !isHaveSelectLine;
 }
 
 - (void)titleButtonClick:(UIButton *)titleButton {
@@ -138,9 +150,13 @@
     
     titleButton.selected = YES;
     
-    [UIView animateWithDuration:0.3 animations:^{
-        _selectLine.frame = CGRectMake(titleButton.x + (titleButton.width-[_widthArray[titleButton.tag] floatValue])/2.0, _selectLine.y, [_widthArray[titleButton.tag] floatValue], _selectLine.height);
-    }];
+    if (self.isHaveSelectLine) {
+        self.selectLine.hidden = NO;
+
+        [UIView animateWithDuration:0.3 animations:^{
+            _selectLine.frame = CGRectMake(titleButton.x + (titleButton.width-[_widthArray[titleButton.tag] floatValue])/2.0, _selectLine.y, [_widthArray[titleButton.tag] floatValue], _selectLine.height);
+        }];
+    }
     
     if (self.titleButtonClickBlock) {
         self.titleButtonClickBlock(titleButton.tag);
@@ -166,23 +182,28 @@
 }
 
 - (void)setSelectIndex:(NSInteger)index {
-    for (id obj in self.subviews) {
-        if ([obj isKindOfClass:[UIButton class]]) {
-            UIButton *button = (UIButton *)obj;
-            
-            button.selected = NO;
-            if (index == button.tag) {
-                button.selected = YES;
-            }
+    for (UIButton *btn in self.buttonArray) {
+        btn.selected = NO;
+        if (btn.tag == index) {
+            btn.selected = YES;
         }
     }
     
+    self.selectLine.hidden = NO;
+
     [UIView animateWithDuration:0.3 animations:^{
-        _selectLine.frame = CGRectMake((kSCREENW/_titleArray.count)*index + ((kSCREENW/_titleArray.count)-[_widthArray[index] floatValue])/2.0, _selectLine.y, [self.widthArray[index] floatValue], _selectLine.height);
-        
-//        _selectLine.width = [self.widthArray[index] floatValue];
-//        _selectLine.centerX = (kSCREENW / self.titleArray.count) * (0.5 + index);
+        _selectLine.frame = CGRectMake((self.width/_titleArray.count)*index + ((self.width/_titleArray.count)-[_widthArray[index] floatValue])/2.0, _selectLine.y, [self.widthArray[index] floatValue], _selectLine.height);
+    } completion:^(BOOL finished) {
+
     }];
+}
+
+- (void)clearAllSelect {
+    for (UIButton *btn in self.buttonArray) {
+        btn.selected = NO;
+    }
+    
+    self.selectLine.hidden = YES;
 }
 
 - (void)setButtonTitleFont:(UIFont *)font {
@@ -200,7 +221,7 @@
             [_widthArray addObject:[NSNumber numberWithFloat:rect.size.width]];
             _bottomLine.backgroundColor = BottomLineColor;
             _selectLine.frame = CGRectMake((button.width - [_widthArray[0] floatValue])/2.0, self.selectLine.y, [_widthArray[0] floatValue], 2);
-            
+
             if (self.selectColor) {
                 _selectLine.backgroundColor = self.selectColor;
             }
@@ -208,7 +229,6 @@
             {
                 _selectLine.backgroundColor = SelectLineColor;
             }
-
             i++;
         }
     }
