@@ -54,7 +54,12 @@
         dataArray = @[@"1", @"2"];
     }
     self.titleView = [[RBTitleView alloc] initWithFrame:CGRectMake(0, 0, kSCREENW, 44) andTitleArray:dataArray];
-    self.titleView.isHaveRightLine = YES;
+    if (self.type == 0) {
+        self.titleView.isHaveRightLine = YES;
+    }
+    else {
+        self.titleView.isHaveRightLine = NO;
+    }
     [self.titleView setButtonTitleFont:[UIFont systemFontOfSize:16]];
     self.titleView.titleButtonClickBlock = ^(NSInteger index) {
         
