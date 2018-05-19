@@ -153,8 +153,9 @@
     if (self.isHaveSelectLine) {
         self.selectLine.hidden = NO;
 
+        __weak typeof(RBTitleView *)weakSelf = self;
         [UIView animateWithDuration:0.3 animations:^{
-            _selectLine.frame = CGRectMake(titleButton.x + (titleButton.width-[_widthArray[titleButton.tag] floatValue])/2.0, _selectLine.y, [_widthArray[titleButton.tag] floatValue], _selectLine.height);
+            weakSelf.selectLine.frame = CGRectMake(titleButton.x + (titleButton.width-[weakSelf.widthArray[titleButton.tag] floatValue])/2.0, weakSelf.selectLine.y, [weakSelf.widthArray[titleButton.tag] floatValue], weakSelf.selectLine.height);
         }];
     }
     
@@ -191,8 +192,9 @@
     
     self.selectLine.hidden = NO;
 
+    __weak typeof(RBTitleView *)weakSelf = self;
     [UIView animateWithDuration:0.3 animations:^{
-        _selectLine.frame = CGRectMake((self.width/_titleArray.count)*index + ((self.width/_titleArray.count)-[_widthArray[index] floatValue])/2.0, _selectLine.y, [self.widthArray[index] floatValue], _selectLine.height);
+        weakSelf.selectLine.frame = CGRectMake((self.width/weakSelf.titleArray.count)*index + ((self.width/weakSelf.titleArray.count)-[weakSelf.widthArray[index] floatValue])/2.0, weakSelf.selectLine.y, [self.widthArray[index] floatValue], weakSelf.selectLine.height);
     } completion:^(BOOL finished) {
 
     }];

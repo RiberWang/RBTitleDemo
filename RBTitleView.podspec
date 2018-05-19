@@ -20,6 +20,8 @@ Pod::Spec.new do |s|
   s.summary      = "简单实用的titleView" # 简述
   s.platform     = :ios, "8.0"   # 支持的最低版本
   s.source_files = "RBTitleView/*.{h,m}" # 上传的文件
+  s.public_header_files = 'RBTitleView/*.h'
+
   s.framework    = "UIKit" # 支持的库
   s.homepage     = "https://github.com/RiberWang/RBTitleDemo" # github项目网页 
   s.license      = "MIT" # 授权
