@@ -25,7 +25,6 @@ Pod::Spec.new do |s|
   s.license      = "MIT" # 授权
   s.author	     = { "Riber" => "314420972@qq.com" } # 作者
   s.source       = { :git => "https://github.com/RiberWang/RBTitleDemo.git", :tag => s.version.to_s} # github下载地址（.git），以及版本tag 
-  s.dependencies = 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
