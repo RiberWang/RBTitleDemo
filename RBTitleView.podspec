@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RBTitleView" # 工程名 
-  s.version      = "2.0.0" 		 # 版本号
+  s.version      = "2.0.1" 		 # 版本号
   s.summary      = "简单实用的titleView" # 简述
   s.platform     = :ios, "8.0"   # 支持的最低版本
   s.source_files = "RBTitleView/*.{h,m}" # 上传的文件
