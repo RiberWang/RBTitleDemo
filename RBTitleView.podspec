@@ -15,24 +15,24 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "RBTitleView"
-  s.version      = "1.0.1"
-  s.summary      = "可滑动的titleView"
-  s.platform     = :ios, "8.0"
-  s.source_files  = "RBTitleView/*.{h,m}"
-  s.framework  = "UIKit"
-  s.homepage     = "https://github.com/RiberWang/RBTitleDemo"
-  s.license      = "MIT"
-  s.author             = { "Riber" => "314420972@qq.com" }
-  s.source       = { :git => "https://github.com/RiberWang/RBTitleDemo.git", :tag => s.version.to_s}
-
+  s.name         = "RBTitleView" # 工程名 
+  s.version      = "2.0.0" 		 # 版本号
+  s.summary      = "简单实用的titleView" # 简述
+  s.platform     = :ios, "8.0"   # 支持的最低版本
+  s.source_files = "RBTitleView/*.{h,m}" # 上传的文件
+  s.framework    = "UIKit" # 支持的库
+  s.homepage     = "https://github.com/RiberWang/RBTitleDemo" # github项目网页 
+  s.license      = "MIT" # 授权
+  s.author	     = { "Riber" => "314420972@qq.com" } # 作者
+  s.source       = { :git => "https://github.com/RiberWang/RBTitleDemo.git", :tag => s.version.to_s} # github下载地址（.git），以及版本tag 
+  s.dependencies = 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-			可滑动的titleView 支持右边有无分割线
+			简单实用的titleView 支持右边有无分割线
                    DESC
 
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
